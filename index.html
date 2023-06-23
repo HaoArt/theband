@@ -9,9 +9,529 @@
     <link rel="shortcut icon"
         href="https://png.pngtree.com/png-clipart/20220426/ourlarge/pngtree-vinyl-record-abstract-music-black-red-png-image_4558304.png"
         type="image/x-icon">
-    <link rel="stylesheet" href="/assec/css/style.css">
+    <!-- <link rel="stylesheet" href="/assec/css/style.css"> -->
     <link rel="stylesheet" href="/assec/font-icon/themify-icons/themify-icons.css">
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-size: 16px; */
+}
 
+/*
+quy tắc làm việc:
+trừ ngoài vào trong
+từ trên xuống dưới
+tổng quan đến chi tiết
+
+*/
+
+/*
+1: vị trí
+2: kích thước
+3: màu sắc
+4: kiểu dáng (tròn , vuông , kiểu chữ  , ...)
+*/
+.clear {
+    clear: both;
+}
+
+.text-while {
+    color: #fff !important;
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+
+.mt-16{
+    margin-top: 16px!important;
+}
+
+
+.mt-24{
+    margin-top: 24px!important;
+}
+
+.pull-right{
+    float: right;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full{
+    width: 100%;
+}
+.col-half{
+    width: 50%;
+}
+
+.col-third{
+    width: 33.3333333%;
+}
+html {
+    /* hành động cuồn trang */
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {}
+
+#header {
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav>li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+    list-style: none;
+}
+
+#nav>li>a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+
+    display: block;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+/* hover ở thẻ a mà ko làm con thẻ a bị hover theo*/
+/* hover o the con truc tiep*/
+/* dung chung kieu du lieu*/
+#nav>li:hover>a,
+#nav .subnav li:hover a {
+    color: #000;
+    background-color: #ccc;
+
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    min-width: 160px;
+}
+
+#nav .subnav a {
+    color: #000;
+    padding-left: 12px;
+}
+
+#header .search-btn {
+    float: right;
+    color: #fff;
+    line-height: 46px;
+    padding: 0 21px;
+
+}
+
+#header .search-icon {
+    font-weight: bold;
+}
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('/assec/img/slide/chicago.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#slider .text-heading {
+    font-weight: 500;
+    margin-bottom: 25px;
+
+}
+
+#slider .text-description {
+    font-size: 15px;
+}
+
+#content {}
+
+#content .content-section {
+    width: 800px;
+    padding: 64px 0 112px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    /* letter-spacing: 4px; khoang cach giua tung chu */
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 15px;
+    font-style: italic;
+    opacity: 0.5;
+}
+
+#content .about-text {
+    margin-top: 25px;
+    font-size: 15px;
+    /*  text-align: justify; can deu 2 ben */
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .members-list {
+    /* loai bo thuoc tinh cua float  */
+    overflow: hidden;
+    margin-top: 48px;
+}
+
+
+#content .member-img {
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 5px;
+}
+
+#content .members-name {}
+
+/* tour-section */
+
+#content .tour-section {
+    background-color: #000;
+    padding-bottom: 48px;
+}
+
+#content .content-section {}
+
+#content .section-heading {}
+
+#content .section-sub-heading {}
+
+#content .tickets-list {
+    background-color: #fff;
+    margin-top: 45px;
+    list-style: none;
+}
+
+#content .tickets-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border: 1px solid #ddd;
+    color: #757575;
+}
+
+#content .tickets-list li .sold-out {
+    background-color: #F44336;
+    color: #fff;
+    padding: 4px 6px;
+    margin-left: 16px;
+}
+
+#content .tickets-list li .quantity {
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+}
+
+.places-list {
+    margin-top: 32px;
+}
+
+
+.place-img {
+    width: 100%;
+    display: block;
+}
+
+.place-img:hover {
+    opacity: 0.6;
+}
+
+.place-body {
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+
+
+}
+
+.place-heading {
+    font-size: 15px;
+    font-weight: 5000;
+}
+
+.place-time {
+    margin-top: 15px;
+    color: #757575;
+}
+
+.place-desc {
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.btn {
+    color: #fff;
+    font-size: 16px;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #a4a4a4;
+    color: #000000;
+}
+
+/* contact */
+
+.contact-content{
+    margin-top: 48px;
+}
+
+.contact-info{
+    font-size: 18px !important;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+
+}
+
+.contact-from{
+    font-size: 15px;
+
+}
+
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* map-section */
+
+.map-section img {
+    width: 100%;
+}
+
+
+#footer {
+
+    padding: 64px 16px;
+    text-align: center;
+    
+}
+
+#footer .socials-list{
+
+    font-size:  24px;
+ 
+}
+
+#footer .socials-list a{
+    text-decoration: none; 
+    color: #0000008d;
+}
+
+#footer .socials-list a:hover{
+    color: #0000004a;
+}
+
+#footer .coppyright{
+    margin-top: 15px;
+    color: #0000008d;
+}
+
+#footer .coppyright a{
+    color: #0000008d;
+}
+/* modal */
+.modal {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open {
+
+    display: flex;
+}
+
+.modal .modal-container {
+    width: 900px;
+    background-color: #fff;
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease 0.5s;
+}
+
+.modal .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+
+}
+
+.modal .modal-close:hover {
+    background-color: red;
+}
+
+.modal .modal-header {
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+
+}
+
+.modal .modal-header i {
+    margin-right: 10px;
+}
+
+.modal .modal-body {
+
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+.modal .modal-input {
+    font-size: 17px;
+    padding: 10px;
+    margin-bottom: 24px;
+
+}
+
+.modal .modal-lable {
+    margin-bottom: 11px;
+}
+
+.modal #buy-tickets {
+    padding: 18px;
+    background-color: #009688;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.modal #buy-tickets:hover {
+    opacity: 0.7;
+}
+
+.modal .modal-footer {
+
+    padding: 16px;
+    text-align: right;
+
+}
+
+.modal .modal-footer a {
+
+    color: #2196f3;
+}
+
+@keyframes modalFadeIn {
+    from {
+        transform: translateY(-200px);
+    }
+
+    to {
+
+        transform: translateY(0);
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -242,7 +762,41 @@
 
     </div>
 
-    <script src="/assec/js/assec.js"></script>
+    <!-- <script src="/assec/js/assec.js"></script> -->
+    <script>
+        
+const buyBtns = document.querySelectorAll('.js-buy-ticket')
+
+const modal = document.querySelector('.js-modal')
+
+const modalClose = modal.querySelector('.js-close-modal')
+
+const modalContainer= document.querySelector('.js-modal-container')
+
+// hiển thị modal (hàm hiển thị)
+function showBuyTickets(){
+    modal.classList.add('open')
+}
+
+// ẩn modal (hàm ẩn)
+function hideBuyTickets(){
+    modal.classList.remove('open')
+}
+
+// vòng lặp từng thẻ button
+for (const buyBtn of buyBtns) {
+    buyBtn.addEventListener('click',showBuyTickets);
+}
+
+modalClose.addEventListener('click',hideBuyTickets);
+
+modal.addEventListener('click', hideBuyTickets)
+
+modalContainer.addEventListener('click', function(event){
+    event.stopPropagation()
+})
+
+    </script>
 </body>
 
 </html>
