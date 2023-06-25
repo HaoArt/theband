@@ -1,133 +1,109 @@
-@media screen and (max-width:460px) {
+/* pc >=1024px */
+/* table >=740px and <=1024px*/
+/* mobile<740px */
 
-    html {
-        height: 100%;
-    }
-
-    /* header */
-    #header {
-        width: 100%;
-        position: fixed;
-        top: 0;
-    }
-
-    #nav {
-        font-size: 10px;
-
-    }
-
-    #nav li a {
-        padding: 0 3px;
-
-
-    }
-
-    #slider .text-content {
-
-        bottom: 15px;
-
-    }
-
-    #slider .text-heading {
-        font-weight: 700;
-        font-size: 15px;
-        margin-bottom: 5px;
-    }
-
-    #slider .text-description {
-        font-size: 12px;
-        width: 100%;
-        line-height: 1;
-    }
-
-    /* content */
-
-    #content {}
-
-    /* about -section */
-    #content .content-section {
-        width: 360px;
-        padding: 50px 0 60px;
-    }
-
-    #content .section-heading {
-
-        font-size: 30px;
-
-    }
-
-    #content .section-sub-heading {
-        margin-top: 13px;
-        font-size: 15px;
-    }
-
-    #content .about-text {
-        margin-top: 20px;
-        font-size: 13.8px;
-    }
-
-    #content .members-list {
-        /* loai bo thuoc tinh cua float  */
-        overflow: hidden;
-        margin-top: 30px;
-        font-size: 13px;
-
-    }
-
-
-    #content .member-img {
-        margin-top: 15px;
-        border-radius: 3px;
-        width: 100%;
-    }
-
-
-    #content .tour-section {
-        padding-bottom: 0;
-    }
-
-    .places-list {
-        margin-top: 32px;
-    }
-
-    .places-list .col.col-third{
-        width: 100%;
-        margin-top: 10px;
-    }
-
-
-
-    /* contact */
-
-    .contact-content {
-        margin-top: 48px;
-    }
-
-    .contact-info {
-        font-size: 14px !important;
-        line-height: 1.5;
-    }
-
-   
-
-    .contact-from {
-        font-size: 10px;
-
+@media (max-width :1023px) {
+    .btn{
+        padding: 15px 16px;
     }
 
     .contact-form .form-control{
-        padding: 5px 10px;
-        border: 1px solid #ccc;
+        padding: 15px;
+    }
+    .socials-list{
+        font-size: 20px !important;
+        padding: 0 16px;
+    }
+    .contact-info{
+        line-height: 2;
+    }
+}
+
+
+@media (min-width: 740px) and (max-width: 1023px) {
+
+
+}
+
+
+
+@media (max-width:740px) {
+
+    .s-full-width{
         width: 100%;
     }
 
-   .contact-form .btn{
-    font-size: 14px;
-    padding: 5px 18px;
-   }
+    .s-col-full{
+        width: 100%;
+    }
+    .s-mt-8{
+        margin-top: 8px !important;
+    }
+    #header{
+        overflow: hidden;
+    }
+    #header .menu-icon{
+        display: block;
+    }
+    #header .search-icon{
+        display: none;
+    }
+    #header .search-btn:hover{
+        background-color: #ccc;
+        cursor: none;
+    }
+    
+    #js-mobile-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    #nav{
+        display: block;
+    }
+    
+    
+    #nav li{
+        display: block;
+    }
+    
+    #nav > li:first-child{
+        display: inline-block;
+    }
+    #icon-more svg{
+        position: absolute!important; top: 15px !important;left: 20px !important;
+    }
+    #nav .subnav{
+        position: initial;
+        background-color: #535353;
+    }
+    #nav .subnav a{
+        color: aliceblue;
+        padding:5px 36px ;
 
-   #footer {
-    padding-top: 20px;
-    padding-bottom: 190px;
-   }
+    }
+
+    #nav .subnav a:hover{
+        background-color: #535353;
+    }
+    #content .about-text{
+        font-style: normal;
+    }
+
+    #content .member-item{
+        margin-top: 30px;
+        width: 100% ;
+    }
+
+    #content .member-img{
+        width: 70%;
+    }
+  .contact-form{
+    margin-top: 16px;
+  }
+
+  #footer{
+    margin-top: 12px;
+    margin-bottom: 32px;
+  }
 }
